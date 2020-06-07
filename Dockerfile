@@ -6,9 +6,10 @@ USER root
 RUN curl -fSL https://dl.google.com/go/go1.13.9.linux-amd64.tar.gz -o golang.tar.gz
 RUN tar xf golang.tar.gz
 RUN mv go /usr/local/go-1.13
+RUN mkdir /opt
 
 ENV GOROOT="/usr/local/go-1.13"
-ENV GOPATH="~/.go"
+ENV GOPATH="/opt/.go"
 ENV PATH="${GOROOT}/bin:${PATH}"
 
 # Install Terraform
