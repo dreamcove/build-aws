@@ -8,7 +8,7 @@ RUN tar xf golang.tar.gz
 RUN mv go /usr/local/go-1.13
 
 ENV GOROOT="/usr/local/go-1.13"
-ENV GOPATH="${GOROOT}"
+ENV GOPATH="~/.go"
 ENV PATH="${GOROOT}/bin:${PATH}"
 
 # Install Terraform
