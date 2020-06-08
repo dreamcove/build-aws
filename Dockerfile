@@ -41,4 +41,4 @@ RUN rm -f terraform.zip
 RUN pip3 install awscli awscli-local requests "localstack[full]" --upgrade
 
 # Start Localstack
-CMD localstack start --host
+ENTRYPOINT localstack start --host
