@@ -1,5 +1,7 @@
 FROM ubuntu:18.04
 
+MAINTAINER Chris Watson (chris@dreamcove.com)
+
 USER root
 
 # Install dependencies
@@ -39,6 +41,9 @@ RUN rm -f terraform.zip
 
 # Install AWSCLI / Localstack
 RUN pip3 install awscli awscli-local requests "localstack[full]" --upgrade
+
+# In case Localstack is used external to image
+EXPOSE 4566-4597 8080
 
 # Start Localstack
 ENTRYPOINT localstack start --host
