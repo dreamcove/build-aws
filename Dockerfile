@@ -21,3 +21,6 @@ RUN pip install awscli
 
 # Install Localstack
 RUN pip install localstack
+
+# Start Localstack
+CMD localstack start --host
