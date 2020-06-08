@@ -23,4 +23,4 @@ RUN pip install awscli
 RUN pip install localstack
 
 # Start Localstack
-CMD localstack start --host
+CMD "localstack start --host > server.log 2>&1"
