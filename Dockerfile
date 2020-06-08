@@ -19,3 +19,5 @@ RUN ln -s /opt/terraform/terraform /usr/bin/terraform
 # Install AWSCLI
 RUN pip install awscli
 
+# Install Localstack
+RUN pip install localstack
