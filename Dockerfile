@@ -17,6 +17,9 @@ RUN apt-get -y install npm
 # Install Java
 RUN apt-get -y install openjdk-8-jdk-headless
 
+# Install Hugo
+RUN apt-get -y install hugo
+
 # Install Misc
 RUN apt-get -y install curl libsasl2-dev unzip make git musl-dev
 RUN ln -s /usr/lib/x86_64-linux-musl/libc.so /lib/libc.musl-x86_64.so.1

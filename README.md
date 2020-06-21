@@ -14,4 +14,5 @@ The following are installed on this image.
 - Go 1.13
 - Python 3.6
 - Java 8
+- Hugo (for site generation)
 - other various tools (such as Git, gcc, and Make)
