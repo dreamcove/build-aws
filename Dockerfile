@@ -17,8 +17,6 @@ RUN apt-get install -y sudo && \
     echo "user ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/user && \
     chmod 0440 /etc/sudoers.d/user
 
-# Install dependencies
-
 # Install Ruby
 RUN apt-get -y install ruby-full
 
