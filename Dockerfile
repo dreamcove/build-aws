@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 MAINTAINER Chris Watson (chris@dreamcove.com)
 
@@ -11,6 +11,8 @@ RUN apt-get install -y locales && rm -rf /var/lib/apt/lists/* \
 ENV LANG en_US.utf8
 
 RUN apt-get update
+
+RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
 
 RUN apt-get install -y sudo && \
     adduser user && \
