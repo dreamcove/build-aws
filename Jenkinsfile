@@ -15,7 +15,7 @@ pipeline {
     stage('Build (Tagged)') {
       when {
         expression {
-          env.TAG_NAME != ''
+          env.TAG_NAME != null
         }
       }
       steps {
@@ -25,7 +25,7 @@ pipeline {
     stage('Build (Latest)') {
       when {
         expression {
-          env.TAG_NAME == ''
+          env.TAG_NAME == null
         }
       }
       steps {
