@@ -12,7 +12,22 @@ pipeline {
         sh 'export'
       }
     }
-    stage('Build') {
+    stage('Build (Tagged)') {
+      when {
+        expression {
+          env.TAG_NAME != ''
+        }
+      }
+      steps {
+        sh 'docker build --tag dreamcove/build-aws:${env.TAG_NAME} .'
+      }
+    }
+    stage('Build (Latest)') {
+      when {
+        expression {
+          env.TAG_NAME == ''
+        }
+      }
       steps {
         sh 'docker build --tag dreamcove/build-aws:latest .'
       }
