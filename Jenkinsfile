@@ -19,7 +19,7 @@ pipeline {
         }
       }
       steps {
-        sh 'docker build --tag dreamcove/build-aws:${env.TAG_NAME} .'
+        sh 'docker build --tag dreamcove/build-aws:${TAG_NAME} .'
       }
     }
     stage('Build (Latest)') {
@@ -34,8 +34,9 @@ pipeline {
     }
     stage('Publish') {
       when {
-        expression {
-          env.BRANCH_NAME == 'master'
+        anyOf {
+          expression { env.BRANCH_NAME == 'master' }
+          expression { env.TAG_NAME != null }
         }
       }
       steps {
