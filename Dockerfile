@@ -39,13 +39,13 @@ RUN apt-get -y install curl libsasl2-dev unzip make git musl-dev file sudo
 RUN ln -s /usr/lib/x86_64-linux-musl/libc.so /lib/libc.musl-x86_64.so.1
 
 # Install Go 1.13
-RUN curl -fSL https://dl.google.com/go/go1.13.12.linux-amd64.tar.gz -o golang.tar.gz
+RUN curl -fSL https://dl.google.com/go/go1.13.15.linux-amd64.tar.gz -o golang.tar.gz
 RUN tar xf golang.tar.gz
 RUN mv go /usr/local/go-1.13
 RUN rm -f golang.tar.gz
 
 # Install Terraform
-RUN curl -fSL https://releases.hashicorp.com/terraform/0.12.28/terraform_0.12.28_linux_amd64.zip -o terraform.zip
+RUN curl -fSL https://releases.hashicorp.com/terraform/0.13.2/terraform_0.13.2_linux_amd64.zip -o terraform.zip
 RUN unzip terraform -d /opt/terraform
 RUN ln -s /opt/terraform/terraform /usr/bin/terraform
 RUN rm -f terraform.zip
