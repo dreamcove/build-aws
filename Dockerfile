@@ -38,10 +38,10 @@ RUN apt-get -y install maven
 RUN apt-get -y install curl libsasl2-dev unzip make git musl-dev file sudo
 RUN ln -s /usr/lib/x86_64-linux-musl/libc.so /lib/libc.musl-x86_64.so.1
 
-# Install Go 1.13
-RUN curl -fSL https://dl.google.com/go/go1.13.15.linux-amd64.tar.gz -o golang.tar.gz
+# Install Go 1.15
+RUN curl -fSL https://dl.google.com/go/go1.15.6.linux-amd64.tar.gz -o golang.tar.gz
 RUN tar xf golang.tar.gz
-RUN mv go /usr/local/go-1.13
+RUN mv go /usr/local/go-1.15
 RUN rm -f golang.tar.gz
 
 # Install Terraform

@@ -11,7 +11,7 @@ The following are installed on this image.
 - Terraform 0.14.3
 - AWSCLI
 - Localstack
-- Go 1.13.15
+- Go 1.15.6
 - Python 3.6
 - Java 8
 - Maven
