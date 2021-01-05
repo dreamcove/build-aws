@@ -8,7 +8,7 @@ This Docker image is for faciliating build, test, and deploy for AWS application
 
 The following are installed on this image.
 
-- Terraform 0.13.2
+- Terraform 0.14.3
 - AWSCLI
 - Localstack
 - Go 1.13.15

@@ -45,7 +45,7 @@ RUN mv go /usr/local/go-1.13
 RUN rm -f golang.tar.gz
 
 # Install Terraform
-RUN curl -fSL https://releases.hashicorp.com/terraform/0.13.2/terraform_0.13.2_linux_amd64.zip -o terraform.zip
+RUN curl -fSL https://releases.hashicorp.com/terraform/0.14.3/terraform_0.14.3_linux_amd64.zip -o terraform.zip
 RUN unzip terraform -d /opt/terraform
 RUN ln -s /opt/terraform/terraform /usr/bin/terraform
 RUN rm -f terraform.zip
