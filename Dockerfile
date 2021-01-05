@@ -53,7 +53,7 @@ RUN rm -f terraform.zip
 # Install AWSCLI / Localstack
 RUN pip3 install awscli awscli-local requests "localstack[full]" --upgrade
 
-ENV GOROOT="/usr/local/go-1.13"
+ENV GOROOT="/usr/local/go-1.15"
 ENV GOPATH="/root/.go"
 ENV PATH="${GOROOT}/bin:${PATH}:/root/.local/bin:/home/linuxbrew/.linuxbrew/bin"
 ENV LAMBDA_EXECUTOR=local
