@@ -13,8 +13,6 @@ The following are installed on this image.
 - Localstack
 - Go 1.15.6
 - Python 3.6
-- Java 8
+- Java 11
 - Maven
-- Ruby
-- Hugo (for site generation)
 - other various tools (such as Git, gcc, and Make)

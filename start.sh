@@ -2,7 +2,7 @@
 
 echo Initializing Container
 
-localstack start --host
+localstack start --host &
 
 bash -c "`echo $@`"
 
