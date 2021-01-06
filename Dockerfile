@@ -71,8 +71,17 @@ RUN /home/linuxbrew/.linuxbrew/bin/brew update
 # Install Hugo
 RUN /home/linuxbrew/.linuxbrew/bin/brew install hugo
 
+# Install Localstack
+RUN localstack start --host
+
+# Shell startup script
+COPY start.sh /usr/bin
+RUN chmod a+rwxX /usr/bin/start.sh
+
 # In case Localstack is used external to image
 EXPOSE 4566-4597 8080
 
-# Start Localstack
-ENTRYPOINT localstack start --host
+# Run Entrypoint Script
+ENTRYPOINT ["/usr/bin/start.sh"]
+
+CMD ["/usr/bin/bash"]
