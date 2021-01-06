@@ -9,12 +9,14 @@ RUN ln -s /opt/terraform/terraform /usr/bin/terraform
 RUN rm -f terraform.zip
 
 # Install Build Tools
-RUN apk add git
-RUN apk add go
+RUN apk add --no-cache --virtual .build-deps bash gcc musl-dev openssl go git
 
-ENV GOROOT="/usr/local/go"
+#ENV GOROOT="/usr/local/go"
 ENV GOPATH="/root/.go"
-ENV PATH="${GOROOT}/bin:${PATH}:${GOPATH}/bin"
+
+RUN go get -v golang.org/x/tools/cmd/goimports
+
+#ENV PATH="${GOROOT}/bin:${PATH}:${GOPATH}/bin"
 
 # In case Localstack is used external to image
 EXPOSE 4566-4597 8080
@@ -26,3 +28,6 @@ RUN chmod a+x /usr/bin/start.sh
 ENTRYPOINT ["/usr/bin/start.sh"]
 
 CMD ["/usr/bin/bash"]
+
+RUN echo ${GOROOT}
+RUN go version
