@@ -26,7 +26,10 @@ ENV PATH="${GOROOT}/bin:${PATH}:/root/.local/bin:/home/linuxbrew/.linuxbrew/bin"
 # In case Localstack is used external to image
 EXPOSE 4566-4597 8080
 
-# Run Entrypoint Script
-#ENTRYPOINT ["/usr/bin/start.sh"]
+COPY start.sh /usr/bin
+RUN chmod a+x /usr/bin/start.sh
 
-#CMD ["/usr/bin/bash"]
+# Run Entrypoint Script
+ENTRYPOINT ["/usr/bin/start.sh"]
+
+CMD ["/usr/bin/bash"]

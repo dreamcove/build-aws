@@ -2,7 +2,7 @@
 
 echo Initializing Container
 
-localstack start --host &
+docker-entrypoint.sh &
 
 bash -c "`echo $@`"
 
