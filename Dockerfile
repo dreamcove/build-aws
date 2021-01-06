@@ -5,10 +5,7 @@ MAINTAINER Chris Watson (chris@dreamcove.com)
 USER root
 
 # Install Go 1.15
-RUN curl -fSL https://dl.google.com/go/go1.15.6.linux-amd64.tar.gz -o golang.tar.gz
-RUN tar xf golang.tar.gz
-RUN mv go /usr/local/go-1.15
-RUN rm -f golang.tar.gz
+COPY --from=golang:1.15-alpine /usr/local/go/ /usr/local/go/
 
 # Install Terraform
 RUN curl -fSL https://releases.hashicorp.com/terraform/0.14.3/terraform_0.14.3_linux_amd64.zip -o terraform.zip
@@ -22,7 +19,7 @@ RUN pip3 install awscli awscli-local
 # Install Build Tools
 RUN apk add git
 
-ENV GOROOT="/usr/local/go-1.15"
+ENV GOROOT="/usr/local/go"
 ENV GOPATH="/root/.go"
 ENV PATH="${GOROOT}/bin:${PATH}:/root/.local/bin:/home/linuxbrew/.linuxbrew/bin"
 
