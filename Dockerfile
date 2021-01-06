@@ -17,9 +17,9 @@ RUN pip3 install awscli awscli-local
 RUN apk add git
 RUN apk add go
 
-#ENV GOROOT="/usr/local/go"
-#ENV GOPATH="/root/.go"
-#ENV PATH="${GOROOT}/bin:${PATH}:/root/.local/bin:/home/linuxbrew/.linuxbrew/bin"
+ENV GOROOT="/usr/local/go"
+ENV GOPATH="/root/.go"
+ENV PATH="${GOROOT}/bin:${PATH}:/root/.local/bin:/home/linuxbrew/.linuxbrew/bin"
 
 # In case Localstack is used external to image
 EXPOSE 4566-4597 8080
