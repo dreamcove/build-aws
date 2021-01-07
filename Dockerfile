@@ -11,12 +11,7 @@ RUN rm -f terraform.zip
 # Install Build Tools
 RUN apk add --no-cache --virtual .build-deps bash gcc musl-dev openssl go git openjdk11
 
-#ENV GOROOT="/usr/local/go"
 ENV GOPATH="/root/.go"
-
-RUN go get -v golang.org/x/tools/cmd/goimports
-
-#ENV PATH="${GOROOT}/bin:${PATH}:${GOPATH}/bin"
 
 # In case Localstack is used external to image
 EXPOSE 4566-4597 8080
