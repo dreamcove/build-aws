@@ -9,7 +9,9 @@ RUN ln -s /opt/terraform/terraform /usr/bin/terraform
 RUN rm -f terraform.zip
 
 # Install Build Tools
-RUN apk add --no-cache --virtual .build-deps build-base bash gcc musl-dev openssl go git perl
+RUN apk update
+RUN apk upgrade
+RUN apk add .build-deps build-base bash gcc musl-dev openssl go git perl
 
 ENV GOPATH="/root/.go"
 
