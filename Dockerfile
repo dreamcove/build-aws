@@ -11,7 +11,7 @@ RUN rm -f terraform.zip
 # Install Build Tools
 RUN apk update
 RUN apk upgrade
-RUN apk add build-base bash g++ gcc musl-dev openssl go git perl
+RUN apk add build-base bash g++ gcc musl-dev openssl go git perl openssh
 
 ENV GOPATH="/root/.go"
 
