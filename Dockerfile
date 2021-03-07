@@ -1,6 +1,4 @@
-FROM localstack/localstack:latest
-
-MAINTAINER Chris Watson (chris@dreamcove.com)
+FROM localstack/localstack:0.12.7
 
 # Install Terraform
 RUN curl -fSL https://releases.hashicorp.com/terraform/0.14.3/terraform_0.14.3_linux_amd64.zip -o terraform.zip
@@ -26,5 +24,5 @@ ENTRYPOINT ["/usr/bin/start.sh"]
 
 CMD ["/usr/bin/bash"]
 
-RUN echo ${GOROOT}
-RUN go version
+RUN ["echo", "${GOROOT}"]
+RUN ["go", "version"]
